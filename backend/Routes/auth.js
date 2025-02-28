@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 router.use(cookieParser());
 router.use(session({
-    secret: 'your_secret_key',
+    secret: 'boebvowe829yur7hnfb',
     resave: false,
     saveUninitialized: false,
 }));
@@ -53,7 +53,7 @@ router.post('/signup', async (req, res) => {
 
 // Login Route
 router.post('/login', passport.authenticate('local', { failureRedirect: '/' }), (req, res) => {
-    const token = jwt.sign({ id: req.user._id }, 'your_jwt_secret');
+    const token = jwt.sign({ id: req.user._id }, 'boebvowe829yur7hnfb');
     res.cookie('token', token, { httpOnly: true }); 
     return res.json({ message: 'Login successful', id: req.user._id });
 });

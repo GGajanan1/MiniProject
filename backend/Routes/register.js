@@ -50,7 +50,7 @@ router.post('/',upload.single('image'), async (req, res) => {
     });
 
     const currUser = await User.findById(id);
-    if (currUser) {
+    if (!currUser) {
         newListing.user=id;
         await newListing.save();
         return res.status(201).json({ message: 'User details have been added successfully!' });

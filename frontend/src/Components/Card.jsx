@@ -14,6 +14,7 @@ function card({id,name,batch,dept,imgURL}) {
         <Card.Text>
          <span>
           Batch : {batch}
+          
          </span>
           <p>Department : {dept}</p>
         </Card.Text>
